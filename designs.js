@@ -10,16 +10,19 @@ $(function() {
 
 	// When size is submitted by the user, call makeGrid()
 	$( "#sizePicker" ).submit(function() {
-	  makeGrid();
 	  event.preventDefault();
+	  $( 'tr' ).remove();
+	  makeGrid();
 	});
 
 	function makeGrid() {
 	// Your code goes here!
 	var tableRow, tableCell;
+	  
   	for(var row = 0; row < height.val(); row++){
   		tableRow = $('<tr></tr>');
   		$('#pixelCanvas').append(tableRow);
+
   		for(var col = 0; col < width.val(); col++){
   			tableCell = $('<td></td>');
   			tableRow.append(tableCell);
@@ -32,7 +35,7 @@ $(function() {
 
   	$('td').click(function() {
   		$(this).css('background', color);
-  	})	 
-	}
+  	})
 
+	}
 })
