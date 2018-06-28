@@ -1,12 +1,11 @@
 $(function() {
 
-	var color, width, height;
 	// Select color input
-	color = $('#colorPicker').val();
+	let color = $('#colorPicker').val();
 	
 	// Select size input
-	width = $('#inputWidth');
-	height = $('#inputHeight');
+	const width = $('#inputWidth');
+	const height = $('#inputHeight');
 
 	// When size is submitted by the user, call makeGrid()
 	$( "#sizePicker" ).submit(function() {
@@ -17,13 +16,13 @@ $(function() {
 
 	function makeGrid() {
 	// Your code goes here!
-	var tableRow, tableCell;
+    let tableRow, tableCell;
 	  
-  	for(var row = 0; row < height.val(); row++){
+  	for(let row = 0; row < height.val(); row++){
   		tableRow = $('<tr></tr>');
   		$('#pixelCanvas').append(tableRow);
 
-  		for(var col = 0; col < width.val(); col++){
+  		for(let col = 0; col < width.val(); col++){
   			tableCell = $('<td></td>');
   			tableRow.append(tableCell);
 
